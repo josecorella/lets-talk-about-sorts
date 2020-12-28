@@ -1,5 +1,5 @@
 [package]
-name = "sort"
+name = "rust"
 version = "0.1.0"
 authors = ["Jose <joseeduardocorella@gmail.com>"]
 edition = "2018"
