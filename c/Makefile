@@ -5,8 +5,8 @@ CFLAGS = -g -Wall
 
 all : ${PROGS}
 
-driver : main.o
-		$(CC) $(CFLAGS) -o driver main.o
+driver : driver.o
+		$(CC) $(CFLAGS) -o driver driver.o
 
 clean : 	
 		rm -rf ${PROGS} ${OBJS} *.o *~
