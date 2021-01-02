@@ -3,9 +3,10 @@
 #ifndef _SORT_H
 #define _SORT_H
 
-/* sort.c */
+/* sort.cpp */
 
 #include <ctype.h>
+#include <iostream>
 #include <fcntl.h>
 #include <stdarg.h>
 #include <stdbool.h>
@@ -30,6 +31,6 @@ void quick_sort(int *arr, int high, int low);
 
 void heap_sort(int *arr, int len);
 
-void print_array(char *str, int *arr, int len);
+void print_array(const char *str, int *arr, int len);
 
 #endif /* _SORT_H */
