@@ -30,4 +30,6 @@ void quick_sort(int *arr, int high, int low);
 
 void heap_sort(int *arr, int len);
 
+void print_array(char *str, int *arr, int len);
+
 #endif /* _SORT_H */
