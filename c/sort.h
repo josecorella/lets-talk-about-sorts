@@ -1,7 +1,7 @@
 /* sort.h */
 
-#ifndef _NTCALC_H
-#define _NTCALC_H
+#ifndef _SORT_H
+#define _SORT_H
 
 /* sort.c */
 
@@ -24,8 +24,10 @@ void bubble_sort(int *arr, int len);
 
 void insertion_sort(int *arr, int len);
 
-void merge_sort(int arr*, int len);
+void merge_sort(int *arr, int len);
 
 void quick_sort(int *arr, int high, int low);
 
 void heap_sort(int *arr, int len);
+
+#endif /* _SORT_H */
