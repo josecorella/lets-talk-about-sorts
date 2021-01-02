@@ -1,5 +1,5 @@
 # Sorting Algorithms
-This C folder contains implemtatations to various sorting algorithms.
+This C++ folder contains implemtatations to various sorting algorithms.
 
 ## Algorithms
 - Selection Sort : O(n<sup>2</sup>)
