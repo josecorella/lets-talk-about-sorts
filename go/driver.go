@@ -1,7 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"./sorts"
+)
 
 func main() {
-    fmt.Println("Hello, World!")
+	sorts.Hello()
 }
