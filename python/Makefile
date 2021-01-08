@@ -6,3 +6,6 @@ all : ${PROGS}
 
 driver :
 	$(CC) driver.py
+
+clean :
+	rm -rf ${PROGS}

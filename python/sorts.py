@@ -7,6 +7,13 @@ def selection_sort(list):
         list[i], list[min_index] = list[min_index], list[i]
 
 
+def bubble_sort(list):
+    for i in range(len(list)):
+        for j in range(0, len(list)-i-1):
+            if list[j] > list [j+1]:
+                list[j], list[j+1] = list[j+1], list[j]
+
+
 def print_array(sort, list):
     print(sort)
     for elem in range(len(list)):
