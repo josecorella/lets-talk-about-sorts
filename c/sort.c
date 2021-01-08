@@ -18,8 +18,16 @@ void selection_sort(int *array, int len) {
         }
         swap(&array[min_index], &array[i]);
     }
+}
 
-    print_array("selection sort", array, len);
+void bubble_sort(int *array, int len) {
+    for (int i = 0; i < len; i++) {
+        for (int j = 0; j < len - i - 1; j++) {
+            if (*(array + j) > *(array + (j+1))) {
+                swap(&array[j], &array[j+1]);
+            }
+        }
+    }
 }
 
 void print_array(char *sort, int *array, int len) {
