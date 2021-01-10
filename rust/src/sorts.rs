@@ -16,6 +16,16 @@ pub fn selection_sort(list:&mut [i32]) {
     }
 }
 
+pub fn bubble_sort(list:&mut [i32]) {
+    for i in 0..list.len() {
+        for j in 0..list.len()-1-i {
+            if list[j] > list[j+1] {
+                swap(list, j, j+1);
+            }
+        }
+    }
+}
+
 pub fn print_array(sort_name:&String, list:&[i32]) {
     print!("{} ", sort_name);
     for elem in list.iter() {
