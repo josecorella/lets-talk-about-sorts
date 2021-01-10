@@ -1,29 +1,45 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 #include "sort.h"
 
+
+void load_array(int *array, int len) {
+    for (int i = 0; i < len; i++) {
+        *(array + i) = rand() % 1000;
+    }
+}
+
+
 int main (int argc, char** argv) {
+    int arr_size = 25;
+    int sort_array[arr_size];
+    time_t t;
+    srand((unsigned) time(&t));
+
+    load_array(sort_array, arr_size);
+
     /* Selection Sort */
-    int sel_sort_arr10[10] = {4, 10, 2, 708, 66, 44, 1, 23, 7, 2};
-    print_array("before selection sort", sel_sort_arr10, sizeof(sel_sort_arr10)/sizeof(int));
-    selection_sort(sel_sort_arr10, sizeof(sel_sort_arr10)/sizeof(int));
-    print_array("after selection sort", sel_sort_arr10, sizeof(sel_sort_arr10)/sizeof(int));
+    print_array("before selection sort", sort_array, sizeof(sort_array)/sizeof(int));
+    selection_sort(sort_array, sizeof(sort_array)/sizeof(int));
+    print_array("after selection sort", sort_array, sizeof(sort_array)/sizeof(int));
     
     printf("\n");
+    load_array(sort_array, arr_size);
 
     /* Bubble Sort */
-    int bubble_sort_arr[10] = {4, 10, 2, 7, 99, 100, 1, 42, 34, 23};
-    print_array("before bubble sort", bubble_sort_arr, sizeof(bubble_sort_arr)/sizeof(int));
-    bubble_sort(bubble_sort_arr, sizeof(bubble_sort_arr)/sizeof(int));
-    print_array("after bubble sort", bubble_sort_arr, sizeof(bubble_sort_arr)/sizeof(int));
+    print_array("before bubble sort", sort_array, sizeof(sort_array)/sizeof(int));
+    bubble_sort(sort_array, sizeof(sort_array)/sizeof(int));
+    print_array("after bubble sort", sort_array, sizeof(sort_array)/sizeof(int));
     
     printf("\n");
+    load_array(sort_array, arr_size);
 
     /* Insertion Sort */
-    int insert_sort[10] = {4, 10, 2, 7, 99, 100, 1, 42, 34, 23};
-    print_array("before insertion sort", insert_sort, sizeof(insert_sort)/sizeof(int));
-    insertion_sort(insert_sort, sizeof(insert_sort)/sizeof(int));
-    print_array("after insertion sort", insert_sort, sizeof(insert_sort)/sizeof(int));
+    print_array("before insertion sort", sort_array, sizeof(sort_array)/sizeof(int));
+    insertion_sort(sort_array, sizeof(sort_array)/sizeof(int));
+    print_array("after insertion sort", sort_array, sizeof(sort_array)/sizeof(int));
     
 
     return 0;
