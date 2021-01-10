@@ -17,5 +17,14 @@ int main (int argc, char** argv) {
     bubble_sort(bubble_sort_arr, sizeof(bubble_sort_arr)/sizeof(int));
     print_array("after bubble sort", bubble_sort_arr, sizeof(bubble_sort_arr)/sizeof(int));
     
+    printf("\n");
+
+    /* Insertion Sort */
+    int insert_sort[10] = {4, 10, 2, 7, 99, 100, 1, 42, 34, 23};
+    print_array("before insertion sort", insert_sort, sizeof(insert_sort)/sizeof(int));
+    insertion_sort(insert_sort, sizeof(insert_sort)/sizeof(int));
+    print_array("after insertion sort", insert_sort, sizeof(insert_sort)/sizeof(int));
+    
+
     return 0;
 }
