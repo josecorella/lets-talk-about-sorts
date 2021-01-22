@@ -1,20 +1,35 @@
+import random
+
 import sorts
 
+def fill_array(sort_array):
+    for i in range(25):
+        sort_array[i] = random.randint(0, 1000)
 
 def main():
+    sort_array = [0] * 25
+    fill_array(sort_array)
+
     # Selection Sort
-    sel_sort = [4, 10, 2, 708, 66, 44, 1, 23, 7, 2]
-    sorts.print_array("Before selection sort:", sel_sort)
-    sorts.selection_sort(sel_sort)
-    sorts.print_array("After selection sort:", sel_sort)
+    print("Before selection sort:", sort_array, sep=" ")
+    sorts.selection_sort(sort_array)
+    print("After selection sort:", sort_array, sep=" ", end="\n")
 
     print()
+    fill_array(sort_array)
 
     # Bubble Sort
-    bubble_sort_arr = [4, 10, 2, 7, 99, 100, 1, 42, 34, 23]
-    sorts.print_array("Before Bubble sort:", bubble_sort_arr)
-    sorts.bubble_sort(bubble_sort_arr)
-    sorts.print_array("After Bubble sort:", bubble_sort_arr)
+    print("Before Bubble sort:", sort_array, sep=" ")
+    sorts.bubble_sort(sort_array)
+    print("After Bubble sort:", sort_array, sep=" ", end="\n")
+
+    print()
+    fill_array(sort_array)
+
+    # Insertion Sort
+    print("Before Insertion sort:", sort_array, sep=" ")
+    sorts.insertion_sort(sort_array)
+    print("After Insertion sort:", sort_array, sep=" ", end="\n")
 
 if __name__ == "__main__":
     main()

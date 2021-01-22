@@ -32,6 +32,20 @@ void bubble_sort(int *array, int len) {
     }
 }
 
+void insertion_sort(int *array, int len) {
+    int i, j, key;
+    for (i = 1; i < len; i++) {
+        key = *(array + i);
+        j = i -1;
+
+        while (j >= 0 && *(array + j) > key) {
+            *(array + (j + 1)) = *(array + j);
+            j = j - 1;
+        }
+        *(array + (j + 1)) = key;
+    }
+}
+
 void print_array(const char *sort, int *array, int len) {
     cout << sort << " ";
     for (int i = 0; i < len; i++) {

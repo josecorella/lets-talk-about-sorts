@@ -13,9 +13,14 @@ def bubble_sort(list):
             if list[j] > list [j+1]:
                 list[j], list[j+1] = list[j+1], list[j]
 
+def insertion_sort(list):
+    for i in range(1, len(list)):
+        key = list[i]
+        j = i - 1
+        
+        while (j >= 0 and list[j] > key):
+            list[j+1] = list[j]
+            j -= 1
+        list[j+1] = key
 
-def print_array(sort, list):
-    print(sort)
-    for elem in range(len(list)):
-        print(list[elem], end=" ")
-    print()
+
