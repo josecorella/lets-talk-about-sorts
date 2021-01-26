@@ -24,7 +24,7 @@ func main() {
 	sorts.SelectionSort(sortArr)
 	sorts.PrintArray("After Selection Sort", sortArr)
 
-    fmt.Println();
+    fmt.Println()
     FillArray(sortArr)
 
     // Bubble Sort
@@ -32,11 +32,19 @@ func main() {
 	sorts.BubbleSort(sortArr)
    	sorts.PrintArray("After Bubble Sort", sortArr)
     
-    fmt.Println();
-    FillArray(sortArr);
+    fmt.Println()
+    FillArray(sortArr)
 
     // Insertion Sort
     sorts.PrintArray("Before Insertion Sort", sortArr)
 	sorts.InsertionSort(sortArr)
 	sorts.PrintArray("After Insertion Sort", sortArr)
+
+    fmt.Println()
+    FillArray(sortArr)
+
+    // Merge Sort
+    sorts.PrintArray("Before Merge Sort", sortArr)
+    sorts.MergeSort(sortArr, 0, len(sortArr))
+    sorts.PrintArray("After Merge Sort", sortArr)
 }

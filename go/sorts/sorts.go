@@ -39,6 +39,45 @@ func InsertionSort(list []int) {
     }
 }
 
+func MergeSort(list []int, l int, r int) {
+    if len(list) > 1 {
+        var mid, i, j, k int
+        mid = len(list) / 2
+        left := make([]int, mid - l)
+        right := make([]int, r - mid)
+        copy(left[:], list[:mid])
+        copy(right[:], list[mid:])
+
+        MergeSort(left, l, mid)
+        MergeSort(right, mid, r)
+
+        i = 0
+        j = 0
+        k = l
+        for i < len(left) && j < len(right) {
+            if left[i] < right[j] {
+                list[k] = left[i]
+                i++
+            } else {
+                list[k] = right[j]
+                j++
+            }
+            k++
+        }
+
+        for i < len(left) {
+            list[k] = left[i]
+            i++
+            k++
+        }
+
+        for j < len(right) {
+            list[k] = right[j]
+            j++
+            k++
+        }
+    }
+}
 
 func PrintArray(sortName string, list []int)  {
     fmt.Printf("%s: ", sortName)
