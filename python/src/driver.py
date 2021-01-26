@@ -30,6 +30,14 @@ def main():
     print("Before Insertion sort:", sort_array, sep=" ")
     sorts.insertion_sort(sort_array)
     print("After Insertion sort:", sort_array, sep=" ", end="\n")
+    
+    print()
+    fill_array(sort_array)
+    
+    # Merge Sort
+    print("Before Merge sort:", sort_array, sep=" ")
+    sorts.merge_sort(sort_array)
+    print("After Merge sort:", sort_array, sep=" ", end="\n")
 
 if __name__ == "__main__":
     main()
