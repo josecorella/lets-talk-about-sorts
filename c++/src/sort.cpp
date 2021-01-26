@@ -1,6 +1,11 @@
+#include <algorithm>
+#include <iostream>
+
 #include "sort.h"
 
 using namespace std;
+
+void merge(int *array, int l, int m, int r);
 
 void swap(int *i, int *o) {
     int tmp = *i;
@@ -43,6 +48,63 @@ void insertion_sort(int *array, int len) {
             j = j - 1;
         }
         *(array + (j + 1)) = key;
+    }
+}
+
+void merge_sort(int *array, int l, int r) {
+    if (l >= r) {
+        return;
+    }
+    
+    int m = (l + r - 1) / 2;
+    merge_sort(array, l, m);
+    merge_sort(array, m + 1, r);
+
+    merge(array, l, m, r);
+}
+
+void merge(int *array, int l, int m, int r) {
+    int i, j, k;
+    int sub1 = m - l + 1;
+    int sub2 = r - m;
+
+    int left[sub1], right[sub2];
+    
+    for (int i = 0; i < sub1; i++) {
+        *(left + i) = *(array + (l + i));
+    }
+    
+    for (int j = 0; j < sub2; j++) {
+        *(right + j) = *(array + (m + 1 + j));
+    }
+
+    i = 0;
+    j = 0;
+    k = l;
+
+    // merge left and right subarrays into the array
+    while (i < sub1 && j < sub2) {
+        if (*(left + i) <= *(right + j)) {
+            *(array + k) = *(left + i);
+            i++;
+        } else {
+            *(array + k) = *(right + j);
+            j++;
+        }
+        k++;
+    }
+
+    // handle edge cases
+    while (i < sub1) {
+        *(array + k) = *(left + i);
+        i++;
+        k++;
+    }
+
+    while (j < sub2) {
+        *(array + k) = *(right + j);
+        j++;
+        k++;
     }
 }
 
