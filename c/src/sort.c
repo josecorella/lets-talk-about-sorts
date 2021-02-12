@@ -52,12 +52,11 @@ void merge_sort(int *array, int l, int r) {
         int m = l + (r - l) / 2;
         merge_sort(array, l, m); //left to middle
         merge_sort(array, m + 1, r); //middle + 1 to the right
-    
         merge(array, l, m, r); //merge the subarrays
     }
 }
 
-void merge(int *array, int l, int m, int r) { 
+void merge(int *array, int l, int m, int r) {
     //merge the subarrays first l...m and then m+1...r
     int i, j, k;
     int n1 = m - l + 1;
