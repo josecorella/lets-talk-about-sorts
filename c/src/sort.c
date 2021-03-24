@@ -62,20 +62,20 @@ void merge(int *array, int l, int m, int r) {
     int n1 = m - l + 1;
     int n2 = r - m;
     int left[n1], right[n2];
-    
+
     //copy data to respective arrays O(n)
     for (i = 0; i < n1; i++) {
         *(left + i) = *(array + (l + i));
     }
-    
+
     for (j = 0; j < n2; j++) {
         *(right + j) = *(array + (m + 1 + j));
     }
-    
+
     i = 0;
     j = 0;
     k = l;
-    
+
     // merge left and right
     while (i < n1 && j < n2) {
         if (*(left + i) <= *(right + j)) {
@@ -94,7 +94,7 @@ void merge(int *array, int l, int m, int r) {
         i++;
         k++;
     }
-    
+
     while (j < n2) {
         array[k] = right[j];
         j++;
